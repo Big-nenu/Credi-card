@@ -1,0 +1,82 @@
+{
+  "_comentario": "Reglas de clasificacion de movimientos. EL ORDEN IMPORTA: se aplica la PRIMERA que coincida. 'patron' es una expresion regular que se evalua sin distinguir mayusculas/minusculas sobre la descripcion del movimiento.",
+  "tipos": {
+    "Fijo": "Gastos recurrentes necesarios (luz, internet, telefonia, despensa, transporte diario)",
+    "Variable": "Gasto corriente discrecional o semiflexible (delivery, gaming, ropa, salidas)",
+    "Inversion": "Herramienta de trabajo, educacion, certificaciones y salud",
+    "Financiero": "Intereses, IVA de intereses, comisiones y retiros de efectivo",
+    "Deuda0": "Cuotas de compras a meses sin intereses (0%)",
+    "Pago": "Pagos y abonos a la tarjeta (no son gasto)"
+  },
+  "reglas": [
+    { "patron": "CASHBACK|BONIFICACI", "categoria": "Cashback", "tipo": "Pago" },
+    { "patron": "SPEI|PAGO POR|ABONO", "categoria": "Pago a la tarjeta", "tipo": "Pago" },
+    { "patron": "MISALDOS", "categoria": "Comision por retiro de efectivo", "tipo": "Financiero" },
+    { "patron": "UBRPAGOSMEX|PAGOSMEX", "categoria": "Comisiones y tramites", "tipo": "Financiero" },
+    { "patron": "INTERES", "categoria": "Intereses", "tipo": "Financiero" },
+    { "patron": "ANUALIDAD|COMISION", "categoria": "Comisiones bancarias", "tipo": "Financiero" },
+    { "patron": "STEAM|XSOLLA|EPIC GAMES|RIOT|NINTENDO", "categoria": "Gaming", "tipo": "Variable" },
+    { "patron": "NETFLIX|DISNEY|HBOMAX|HBO MAX|HELPHBOMAX|SPOTIFY|PARAMOUNT|PRIME VIDEO|CRUNCHYROLL", "categoria": "Streaming y musica", "tipo": "Variable" },
+    { "patron": "RAPPI", "categoria": "Delivery y restaurantes", "tipo": "Variable" },
+    { "patron": "UBER EATS|DIDI FOOD|SIN DELIVERY", "categoria": "Delivery y restaurantes", "tipo": "Variable" },
+    { "patron": "STARBUCKS|BURGER|MCDONALD|CINEPOLIS|CINE|TACO|ALAS|POLLO", "categoria": "Delivery y restaurantes", "tipo": "Variable" },
+    { "patron": "BERSHKA|PULL BEAR|PULL&BEAR|ZARA|H&M|SHEIN|SUBURBIA", "categoria": "Ropa y calzado", "tipo": "Variable" },
+    { "patron": "SAMSUNG|SAMSUNGELEC|XIAOMI|APPLE STORE|LENOVO|HP INC|DELL", "categoria": "Electronica y equipos", "tipo": "Variable" },
+    { "patron": "AISGECOMMER|ALIEXPRESS|ALIBABA|TEMU|MERCADOLIBRE", "categoria": "Compras en linea", "tipo": "Variable" },
+    { "patron": "TOTALPLAY|IZZI|TELMEX|MEGACABLE|IZZI TELECOM", "categoria": "Internet y telefonia fija", "tipo": "Fijo" },
+    { "patron": "\\bATT\\b|MI ATT|TELCEL|MOVISTAR|BAIT|UNEFON", "categoria": "Telefonia movil", "tipo": "Fijo" },
+    { "patron": "UBER|DIDI|CABIFY|BEAT", "categoria": "Transporte", "tipo": "Variable" },
+    { "patron": "GASOLINA|PEMEX|SHELL|\\bBP\\b|MOBIL|CHEVRON", "categoria": "Gasolina", "tipo": "Fijo" },
+    { "patron": "OXXO|7-ELEVEN|SEVEN|WALMART|SORIANA|CHEDRAUI|LA COMER|BODEGA|SUPER|MERZA|CASA LEY", "categoria": "Despensa", "tipo": "Fijo" },
+    { "patron": "FARMACIA|SIMILARES|FARMACOM|BENAVIDES|GUADALAJARA", "categoria": "Salud", "tipo": "Fijo" },
+    { "patron": "UDEMY|COURSERA|PLATZI|GITHUB|CURSOS|CERTIFICAC|EDUCACION|ESCUELA|UNIVERSIDAD", "categoria": "Educacion y certificaciones", "tipo": "Inversion" },
+    { "patron": "AMAZON A MESES", "categoria": "Amazon a meses", "tipo": "Deuda0" },
+    { "patron": "AMAZON|AMZN", "categoria": "Amazon", "tipo": "Variable" },
+    { "patron": "ATT APP|PAQ DAT", "categoria": "Telefonia movil", "tipo": "Fijo" }
+  ],
+  "planes": [
+    {
+      "coincide_con": "AMAZON A MESES",
+      "fecha_operacion": "2026-09-24",
+      "etiqueta": "Laptop de trabajo (12 MSI al 0%)",
+      "tipo": "Inversion"
+    },
+    {
+      "coincide_con": "AMAZON A MESES",
+      "fecha_operacion": "2026-09-23",
+      "etiqueta": "Webcam para certificacion (12 MSI al 0%)",
+      "tipo": "Inversion"
+    },
+    {
+      "coincide_con": "AMAZON",
+      "fecha_operacion": "2026-08-30",
+      "etiqueta": "Amazon a 6 meses CON intereses (67.08%)",
+      "tipo": "Variable"
+    },
+    {
+      "coincide_con": "AMAZON A MESES",
+      "etiqueta": "Amazon a meses (compras menores)",
+      "tipo": "Deuda0"
+    },
+    {
+      "coincide_con": "BERSHKA",
+      "etiqueta": "Bershka a 6 meses CON intereses",
+      "tipo": "Variable"
+    }
+  ],
+  "categorias_inversion": [
+    "Herramienta de trabajo",
+    "Educacion y certificaciones",
+    "Salud"
+  ],
+  "suscripciones_patrones": [
+    { "nombre": "Netflix", "patron": "NETFLIX" },
+    { "nombre": "Disney+", "patron": "DISNEY" },
+    { "nombre": "HBO Max", "patron": "HBOMAX|HELPHBOMAX|HBO MAX" },
+    { "nombre": "Spotify", "patron": "SPOTIFY" },
+    { "nombre": "Paramount+", "patron": "PARAMOUNT" },
+    { "nombre": "Prime Video", "patron": "PRIME VIDEO" },
+    { "nombre": "Internet Totalplay", "patron": "TOTALPLAY" },
+    { "nombre": "AT&T paquete de datos", "patron": "MI ATT|PAQ DAT" }
+  ]
+}

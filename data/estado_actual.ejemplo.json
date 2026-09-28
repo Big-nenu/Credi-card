@@ -1,0 +1,38 @@
+{
+  "_comentario": "PLANTILLA. Copiala como 'estado_actual.json' (quitando '.ejemplo') y pon los numeros que te muestra la app de RappiCard en 'Detalle de linea' y 'Detalle de pago'. Sirve para que el reporte sepa donde estas HOY y no solo donde estabas al corte. El archivo real esta en .gitignore.",
+  "fecha_captura": "1900-01-01",
+  "tarjeta": "RappiCard **** 0000",
+  "limite_credito": 30000.00,
+  "saldo_disponible": 18000.00,
+  "utilizado": 12000.00,
+  "desglose": {
+    "compras_de_contado": 3000.00,
+    "movimientos_pendientes": 200.00,
+    "deuda_del_mes": 1500.00,
+    "compras_diferidas": 800.00,
+    "meses_sin_intereses": 6500.00
+  },
+  "pago_minimo": 0.00,
+  "pago_para_no_generar_intereses": 1500.00,
+  "fecha_corte": "1900-01-10",
+  "fecha_limite_pago": "1900-01-30",
+  "_planes_nuevos_comentario": "MSI que todavia NO aparecen en ningun corte procesado. Cuando subas el corte donde ya vienen, BORRALOS de aqui para no contarlos dos veces.",
+  "planes_nuevos": [
+    {
+      "etiqueta": "Compra a 12 MSI (ejemplo)",
+      "fecha_operacion": "1900-01-15",
+      "monto_original": 12000.00,
+      "pago_requerido": 1000.00,
+      "plazo_total": 12,
+      "cuotas_restantes": 12,
+      "mes_primer_pago": "1900-02",
+      "tasa_anual": 0.00,
+      "tipo_plan": "MSI 0%",
+      "tipo_gasto": "Inversion"
+    }
+  ],
+  "notas": [
+    "Este archivo lo actualizas TU a mano: son los 5 numeros que muestra la app.",
+    "Toma 30 segundos y hace que el semaforo sea en vivo."
+  ]
+}

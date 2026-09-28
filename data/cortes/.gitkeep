@@ -1,0 +1,7 @@
+# Esta carpeta es donde dejas tus estados de cuenta en PDF de RappiCard.
+# Los PDF estan en .gitignore: NO se suben al repositorio porque contienen
+# tu nombre, RFC, CLABE, numero de cuenta y domicilio.
+#
+# Uso mensual:
+#   1. Descarga el nuevo estado de cuenta y dejalo aqui (.pdf).
+#   2. Corre:  python src/actualizar.py

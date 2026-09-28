@@ -1,0 +1,4 @@
+# Esta carpeta guarda los reportes HTML generados.
+# Los HTML estan en .gitignore: contienen tus montos, saldos y deudas.
+#
+# Para generar el reporte:  python src/actualizar.py

@@ -1,0 +1,42 @@
+{
+  "_comentario": "PLANTILLA. Copiala como 'presupuesto.json' (quitando '.ejemplo') y pon TUS numeros. El archivo real esta en .gitignore para que tu ingreso y tus deudas nunca se suban al repositorio.",
+  "moneda": "MXN",
+  "ingreso_neto_mensual": 15000.00,
+  "meta_ahorro_mensual": 1500.00,
+  "gastos_fijos_efectivo": [
+    {
+      "concepto": "Luz (CFE)",
+      "monto": 800.00,
+      "periodicidad_meses": 2,
+      "nota": "Aqui van SOLO los gastos que pagas fuera de la tarjeta (efectivo o debito)."
+    },
+    {
+      "concepto": "Transporte publico",
+      "monto_semanal": 220.00,
+      "semanas_por_mes": 4.3333,
+      "nota": "Si prefieres un monto fijo mensual, usa 'monto' + 'periodicidad_meses': 1."
+    },
+    {
+      "concepto": "Despensa y gastos varios en efectivo",
+      "monto": 2000.00,
+      "periodicidad_meses": 1
+    }
+  ],
+  "tarjetas": [
+    {
+      "nombre": "RappiCard",
+      "banco": "Banorte",
+      "ultimos4": "0000",
+      "limite_credito": 30000.00,
+      "emisor_en_pdf": "RappiCard"
+    }
+  ],
+  "umbrales_alerta": {
+    "uso_linea_amarillo_pct": 30.0,
+    "uso_linea_rojo_pct": 50.0,
+    "msi_sobre_ingreso_amarillo_pct": 15.0,
+    "msi_sobre_ingreso_rojo_pct": 30.0,
+    "suscripciones_sobre_ingreso_amarillo_pct": 5.0,
+    "suscripciones_sobre_ingreso_rojo_pct": 10.0
+  }
+}

@@ -1,0 +1,65 @@
+# =============================================================================
+#  DATOS PERSONALES Y FINANCIEROS - NUNCA SUBIR ESTO AL REPOSITORIO
+# =============================================================================
+#  Los estados de cuenta en PDF y las capturas de la app contienen nombre
+#  completo, RFC, CLABE, numero de cuenta, domicilio y todo el historial de
+#  compras. Ese material en un repositorio es material para fraude, y en git
+#  un archivo borrado SIGUE VIVO en el historial.
+#
+#  Regla del proyecto: se versiona el CODIGO, nunca los DATOS.
+#  Para reproducir el proyecto desde cero estan las plantillas *.ejemplo.*
+# =============================================================================
+
+# --- Estados de cuenta y capturas de la app (contienen RFC, CLABE, domicilio)
+data/cortes/*
+!data/cortes/.gitkeep
+resumen-mes/
+gastos-septiembre/
+gastos-octubre/
+gastos-noviembre/
+gastos-diciembre/
+
+# --- Archivos generados con datos reales
+data/*.csv
+data/*.json
+!data/estado_actual.ejemplo.json
+data/*.txt
+
+reportes/*
+!reportes/.gitkeep
+
+# --- Tu presupuesto real (ingreso, deudas, metas). La plantilla si se versiona.
+config/presupuesto.json
+!config/presupuesto.ejemplo.json
+
+# --- Red de seguridad: cualquier PDF, ZIP o imagen suelta
+*.pdf
+*.zip
+*.jpeg
+*.jpg
+*.png
+
+# =============================================================================
+#  Entorno de Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+
+# =============================================================================
+#  Editor y sistema operativo
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store

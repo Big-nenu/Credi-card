@@ -1,0 +1,21 @@
+# Normaliza los finales de linea para que el proyecto funcione igual en
+# Windows, macOS y Linux.
+* text=auto eol=lf
+
+# Los scripts de Python siempre terminan en \n.
+*.py   text eol=lf
+
+# PowerShell funciona mejor con \r\n.
+*.ps1  text eol=crlf
+
+# Archivos binarios: git no los toca.
+*.pdf  binary
+*.zip  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+
+# Los idiomas del repo
+*.md   text
+*.json text
+*.csv  text
